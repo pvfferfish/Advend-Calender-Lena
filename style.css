@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f3f3f3;
+}
+
+h1 {
+    color: #ff6f61;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.door {
+    background-color: #ff6f61;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.door.locked {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.door.opened {
+    background-color: #4caf50;
+}

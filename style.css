@@ -1,36 +1,58 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f3f3f3;
+/* HTML und Body auf 100% setzen, um die volle Höhe des Bildschirms zu nutzen */
+html, body {
+    height: 100%; /* Körper und HTML-Element sollen den gesamten Bildschirm einnehmen */
+    margin: 0; /* Entfernt den Standard-Außenabstand des Browsers */
+    padding: 0; /* Entfernt Standard-Abstand */
+    overflow: hidden; /* Verhindert das Scrollen */
 }
 
-h1 {
-    color: #ff6f61;
-}
-
+/* Container für den Kalender */
 #calendar {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    max-width: 600px;
-    margin: 20px auto;
+    display: flex;
+    flex-direction: column; /* Kalender von oben nach unten anordnen */
+    align-items: center; /* Horizontale Zentrierung */
+    justify-content: center; /* Vertikale Zentrierung */
+    height: 100%; /* Höhe des Containers auf 100% der verfügbaren Höhe setzen */
+    width: 100%; /* Breite des Containers auf 100% der verfügbaren Breite setzen */
+    background-color: #f8dcff; /* Etwas andere Farbe für den Kalender-Hintergrund */
+    margin: 0; /* Kein Außenabstand */
 }
 
+/* Jede Reihe mit Türchen */
+.row {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Sicherstellen, dass die Reihe die volle Breite einnimmt */
+    margin-bottom: 1vh; /* Noch kleinerer Abstand zwischen den Reihen */
+}
+
+/* Türchen selbst */
 .door {
-    background-color: #ff6f61;
-    color: white;
-    padding: 20px;
-    font-size: 24px;
+    width: 4vw; /* Breite der Türchen in Bezug auf die Bildschirmbreite, noch kleiner */
+    height: 4vw; /* Höhe der Türchen in Bezug auf die Bildschirmbreite, noch kleiner */
+    background-color: #e3ffdc; /* Grüner Hintergrund */
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5vw; /* Noch kleinerer Abstand zwischen den Türchen */
+    font-size: 2vw; /* Noch kleinere Schriftgröße */
+    border-radius: 10px; /* Abgerundete Ecken */
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.door.locked {
-    background-color: #cccccc;
-    cursor: not-allowed;
+/* Hover-Effekt für Türchen */
+.door:hover {
+    background-color: #dcf4ff;
+    transform: scale(1.1); /* Vergrößert die Türchen beim Hover */
 }
 
-.door.opened {
-    background-color: #4caf50;
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Damit die Partikel hinter dem Inhalt angezeigt werden */
 }

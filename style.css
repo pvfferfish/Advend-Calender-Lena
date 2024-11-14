@@ -3,7 +3,7 @@ html, body {
     height: 100%; /* Körper und HTML-Element sollen den gesamten Bildschirm einnehmen */
     margin: 0; /* Entfernt den Standard-Außenabstand des Browsers */
     padding: 0; /* Entfernt Standard-Abstand */
-    overflow: hidden; /* Verhindert das Scrollen */
+    overflow: auto; /* Verhindert das Scrollen */
 }
 
 /* Container für den Kalender */
